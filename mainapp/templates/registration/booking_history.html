@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Equipment Booking History</title>
+    <style>
+
+
+        body {
+    font-family: "Arial", sans-serif;
+    /* background-color: #f2f2f2; */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #020617;
+}
+
+header {
+    background-color: #3498db;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+h1 {
+    font-size: 28px;
+    margin: 0;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    
+}
+
+#booking-history {
+    width: 60%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.booking-entry {
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.booking-status {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.accepted {
+    background-color: #a6e1a8; /* Green background for accepted bookings */
+}
+
+.rejected {
+    background-color: #ffcdd2; /* Red background for rejected bookings */
+}
+
+/* Additional styling for time */
+.booking-info p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: black;
+}
+.center{
+    text-align : center ;
+}
+
+
+
+nav {
+    background-color: #17083a;
+    padding: 10px 0;
+}
+
+.ul {
+    display:flex;
+    flex-direction:row;
+    justify-content:flex-start;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+li {
+    
+    padding: 0 150px;
+    margin: 0 0px;
+
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: wheat;
+}
+.Now{
+    /* text-decoration: underline; */
+    
+    color: yellow;
+}
+nav{
+    margin-top: 40px;
+}
+
+    </style>
+</head>
+<!-- <body>
+    <header>
+        <h1>Equipment Booking History</h1>
+    </header> -->
+    <nav>
+        <ul class="ul">
+            <li ><a href="{% url 'dashboard' %}">Book Sports Equipment</a></li>
+            <li class="center" ><a href="{% url 'booking_history' %}" class="Now">Equipment Booking History</a></li>
+            <li class="center"><a href="{% url 'logout' %}">Logout</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="booking-history">
+            <h2 class="center">Booking History</h2>
+            <ul>
+                <li class="booking-entry accepted">
+                    <div class="booking-info">
+                        <p><strong>Equipment:</strong> Tennis Racket</p>
+                        <p><strong>Time:</strong> 10:00 AM</p>
+                    </div>
+                    <div class="booking-status">Accepted</div>
+                </li>
+                <li class="booking-entry rejected">
+                    <div class="booking-info">
+                        <p><strong>Equipment:</strong> Basketball</p>
+                        <p><strong>Time:</strong> 2:00 PM</p>
+                    </div>
+                    <div class="booking-status">Rejected</div>
+                </li>
+                <!-- Add more booking entries here -->
+            </ul>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

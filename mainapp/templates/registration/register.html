@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Create Your Account {% endblock%}
+
+{% block content %}
+<div class="container">
+    <h1>Create an Account</h1>
+    <form id="registration-form" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="first-name">First name:</label>
+            <input type="text" id="first-name" name="first_name" required>
+        </div>
+        <div class="form-group">
+            <label for="last-name">Last name:</label>
+            <input type="text" id="last-name" name="last_name" required>
+        </div>
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required pattern="[A-Za-z0-9@/./+/-/_]{1,150}">
+        </div>
+        <div class="form-group">
+            <label for="email">Email address:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+            <label for="repeat-password">Repeated Password:</label>
+            <input type="password" id="repeat-password" name="repeat_password" required>
+        </div>
+        <button type="submit" id="create-account-button">Create Account</button>
+    </form>
+</div>
+{% endblock %}

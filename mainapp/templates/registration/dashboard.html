@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Equipment Booking</title>
+    <style>
+        /* CSS styles as before */
+
+        .time-select {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .time-select label {
+            margin-bottom: 5px;
+        }
+
+        .time-select select,
+        .time-select input {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #020617;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #1d094b;
+            padding: 10px 0;
+        }
+
+        .ul {
+            display:flex;
+            flex-direction:row;
+            justify-content:flex-start;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        li {
+            display: inline;
+            padding: 0 150px;
+            margin: 0 0px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: wheat;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            width: 300px;
+            text-align: center;
+        }
+
+        .card img {
+            max-width: 100%;
+            height: 250px;
+        }
+
+        .btn-book {
+            background-color: #007bff;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-book:hover {
+            background-color: #0056b3;
+        }
+        .present{
+            color: yellow;
+        }
+        nav{
+            margin-top: 40px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul class="ul">
+            <li ><a href="{% url 'dashboard' %}" class="present">Book Sports Equipment</a></li>
+            <li class="center"><a href="{% url 'booking_history'%}">Equipment Booking History</a></li>
+            <li class="center"><a href="{% url 'logout' %}">Logout</a></li>
+            
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.C5bVi3R2CGw0ozc9vzUyiAHaMw&pid=Api&P=0&h=220" alt="Sport 1">
+            <h2>Cricket</h2>
+            <p id="equpment" name="equpment">Cricket Bat</p>
+            <form method="post" class="time-select">
+                {% csrf_token %}
+                <label for="booking_time">Booking Time:</label>
+    <input type="datetime-local" name="booking_time" id="booking_time">
+                <label for="branch">Branch:</label>
+                <input type="text" id="branch" name="branch1" placeholder="Branch">
+                <label for="section">Class Section:</label>
+                <input type="number" id="section" name="section" placeholder="Class Section" min="1" max="3">
+                <button class="btn-book" name="equipment" value="1">Book Now</button>
+            </form>
+        </div>
+
+        <div class="card">
+
+            <img src="https://s.ecrater.com/stores/490140/5f9582715ef57_490140b.jpg" alt="Sport 1">
+            <h2>Football</h2>
+            <p id="equipment">Football</p>
+            <form method="post" class="time-select">
+                {% csrf_token %}
+                <label for="booking_time">Booking Time:</label>
+    <input type="datetime-local" name="booking_time" id="booking_time">
+                <label for="branch">Branch:</label>
+                <input type="text" id="branch" name="branch2" placeholder="Branch">
+                <label for="section">Class Section:</label>
+                <input type="number" id="section" name="section" placeholder="Class Section" min="1" max="3">
+                <button class="btn-book">Book Now</button>
+            </form>
+        </div>
+
+        <div class="card">
+
+            <img src="https://n4.sdlcdn.com/imgs/a/w/p/Nivia-Volleyball-SDL099448049-1-ca145.jpg" alt="Sport 1">
+            <h2>Volleyball</h2>
+            <p id="equipment">Volleyball</p>
+            <form method="post" class="time-select">
+                {% csrf_token %}
+                <label for="booking_time">Booking Time:</label>
+    <input type="datetime-local" name="booking_time" id="booking_time">
+                <label for="branch">Branch:</label>
+                <input type="text" id="branch" name="branch3" placeholder="Branch">
+                <label for="section">Class Section:</label>
+                <input type="number" id="section" name="section" placeholder="Class Section" min="1" max="3">
+                <button class="btn-book">Book Now</button>
+            </form>
+        </div>
+        <div class="card">
+
+            <img src="https://tse2.mm.bing.net/th?id=OIP.Sa26uzJh6AzAgtUFV93sHAHaHa&pid=Api&P=0&h=220" alt="Sport 1">
+            <h2>Basketball</h2>
+            <p id="equipment">Basketball</p>
+            <form method="post" class="time-select">
+                {% csrf_token %}
+                <label for="booking_time">Booking Time:</label>
+    <input type="datetime-local" name="booking_time" id="booking_time">
+                <label for="branch">Branch:</label>
+                <input type="text" id="branch" name="branch4" placeholder="Branch">
+                <label for="section">Class Section:</label>
+                <input type="number" id="section" name="section" placeholder="Class Section" min="1" max="3">
+                <button class="btn-book">Book Now</button>
+            </form>
+        </div>
+        <div class="card">
+
+            <img src="https://cdn.sweatband.com/yonex_ezone_dr_100_tennis_racket_yonex_ezone_dr_100_tennis_racket_2000x2000.jpg"
+                alt="Sport 1">
+            <h2>Tennis</h2>
+            <p id="equipment">Tennis Racket</p>
+            <form method="post" class="time-select">
+                {% csrf_token %}
+                <label for="booking_time">Booking Time:</label>
+    <input type="datetime-local" name="booking_time" id="booking_time">
+                <label for="branch">Branch:</label>
+                <input type="text" id="branch" name="branch5" placeholder="Branch">
+                <label for="section">Class Section:</label>
+                <input type="number" id="section" name="section" placeholder="Class Section" min="1" max="3">
+                <button class="btn-book">Book Now</button>
+            </form>
+        </div>
+        <div class="card">
+
+            <img src="https://cdn.sweatband.com/yonex_voltric_1tr_badminton_racket_yonex_voltric_1tr_badminton_racket_2000x2000.jpg"
+                alt="Sport 1">
+            <h2>Badminton</h2>
+            <p id="equipment">Badminton Racket</p>
+            <form method="post" class="time-select">
+                {% csrf_token %}
+                <label for="booking_time">Booking Time:</label>
+    <input type="datetime-local" name="booking_time" id="booking_time">
+                <label for="branch">Branch:</label>
+                <input type="text" id="branch" name="branch6" placeholder="Branch">
+                <label for="section">Class Section:</label>
+                <input type="number" id="section" name="section" placeholder="Class Section" min="1" max="3">
+                <button class="btn-book">Book Now</button>
+            </form>
+        </div>
+        <div class="card">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.3C1rjXWR0Zpn2M1saxw0EQHaFK&pid=Api&P=0&h=220" alt="Sport 1">
+            <h2>Chess</h2>
+            <p id="equipment">Chess board</p>
+            <form method="post" class="time-select">
+                {% csrf_token %}
+                <label for="booking_time">Booking Time:</label>
+    <input type="datetime-local" name="booking_time" id="booking_time">
+                <label for="branch">Branch:</label>
+                <input type="text" id="branch" name="branch7" placeholder="Branch">
+                <label for="section">Class Section:</label>
+                <input type="number" id="section" name="section" placeholder="Class Section" min="1" max="3">
+                <button class="btn-book">Book Now</button>
+            </form>
+        </div>
+        <div class="card">
+            <img src="https://tse2.explicit.bing.net/th?id=OIP.o4ixrUW_fVAiSgK1ertMUQHaE6&pid=Api&P=0&h=220"
+                alt="Sport 1">
+            <h2>Table Tennis</h2>
+            <p id="equipment">Table Tennis bats</p>
+            <form method="post" class="time-select">
+                {% csrf_token %}
+                <label for="booking_time">Booking Time:</label>
+                <input type="datetime-local" name="booking_time" id="booking_time">
+                <label for="branch">Branch:</label>
+                <input type="text" id="branch" name="branch8" placeholder="Branch">
+                <label for="section">Class Section:</label>
+                <input type="number" id="section" name="section" placeholder="Class Section" min="1" max="3">
+                <button class="btn-book">Book Now</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
